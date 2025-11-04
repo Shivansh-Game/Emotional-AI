@@ -1,5 +1,3 @@
-# Hey retard when dockerising this remove the useless stuff in the folder
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -84,4 +82,5 @@ async def chat(request: ChatRequest):
     return StreamingResponse(
         stream_llm_response(user_message, current_mood_str, current_intensity_int),
         media_type="text/plain"
+
     )
